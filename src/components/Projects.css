@@ -1,0 +1,16 @@
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 3vw, 28px);
+}
+
+/* Le projet phare (Power BI) occupe toute la largeur en tête */
+.projects__grid > *:first-child {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 760px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}

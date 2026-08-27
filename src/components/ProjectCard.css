@@ -1,0 +1,151 @@
+.pcard {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(22px, 3vw, 32px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition),
+    border-color var(--transition);
+}
+.pcard:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: #d3dae3;
+}
+
+.pcard--featured {
+  border-color: #cdd9e8;
+  background:
+    radial-gradient(ellipse 70% 90% at 100% 0%, var(--h-teal-soft), transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, var(--color-accent-soft) 220%);
+}
+
+.pcard__badge {
+  align-self: flex-start;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  background: linear-gradient(100deg, var(--color-accent), var(--h-teal));
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.pcard__title {
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+}
+
+.pcard--featured .pcard__title {
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+}
+
+.pcard__block p {
+  color: var(--color-text-soft);
+  font-size: 0.96rem;
+  line-height: 1.6;
+}
+.pcard__label {
+  display: block;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: 4px;
+}
+
+.pcard__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+
+.pcard__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.pcard__link span {
+  transition: transform var(--transition);
+}
+.pcard__link:hover span {
+  transform: translateX(3px);
+}
+
+/* Sur le projet phare, présenter les blocs sur 2 colonnes en grand écran */
+@media (min-width: 900px) {
+  .pcard--featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    align-items: start;
+  }
+  .pcard--featured .pcard__badge,
+  .pcard--featured .pcard__title {
+    grid-column: 1 / -1;
+  }
+  /* En grille, align-self:flex-start ne bride plus la largeur : sans ceci le
+     badge s'etire sur toute la colonne et devient une banniere. */
+  .pcard--featured .pcard__badge {
+    justify-self: start;
+  }
+  .pcard--featured .pcard__stack,
+  .pcard--featured .pcard__link {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 760px) {
+  /* Lien inline de 24px de haut : trop fin pour le doigt, on lui donne de la hauteur. */
+  .pcard__link {
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+/* ---------- Couleur par projet ----------
+   Chaque projet porte sa teinte de domaine : petrole pour la BI, bleu pour la
+   donnee, vert pour le web/cloud, ambre pour l'automatisation comptable. */
+.pcard[data-project='powerbi'] { --g: var(--h-teal); --g-soft: var(--h-teal-soft); }
+.pcard[data-project='pipeline'] { --g: var(--h-blue); --g-soft: var(--h-blue-soft); }
+.pcard[data-project='resto'] { --g: var(--h-green); --g-soft: var(--h-green-soft); }
+.pcard[data-project='compta'] { --g: var(--h-amber); --g-soft: var(--h-amber-soft); }
+
+/* Filet colore en haut de carte, revele au survol. */
+.pcard::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background: var(--g);
+  opacity: 0.85;
+}
+
+.pcard:hover {
+  border-color: var(--g);
+}
+
+.pcard__label {
+  color: var(--g);
+}
+
+.pcard__link {
+  color: var(--g);
+}
+
+.pcard__stack .tag {
+  color: var(--g);
+  background: var(--g-soft);
+  border-color: transparent;
+}

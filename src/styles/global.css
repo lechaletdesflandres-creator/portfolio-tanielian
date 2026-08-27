@@ -1,0 +1,235 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 76px; /* header sticky (68px) + un peu d air */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  overflow-wrap: break-word;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin: 0;
+  color: var(--color-text);
+}
+
+p { margin: 0; }
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-accent-hover); }
+
+img { max-width: 100%; display: block; }
+
+/* .timeline est un <ol> : sans ce reset, les puces numerotees du navigateur
+   se superposaient aux pastilles de la frise. */
+ul,
+ol { margin: 0; padding: 0; list-style: none; }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ---------- Layout helpers ---------- */
+.container {
+  width: 100%;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  padding-block: var(--section-pad);
+}
+
+/* Premiere section apres le hero : elle n'a pas besoin du padding-top plein,
+   le hero vient juste de se terminer. Sans ca on cumule les deux marges. */
+#about {
+  padding-block-start: clamp(28px, 4vw, 56px);
+}
+
+/* Le gris plat #f2f4f7 accentuait l'impression de site « tout blanc » :
+   on le teinte de deux halos froids, sans perdre la sobriete. */
+.section--alt {
+  background:
+    radial-gradient(ellipse 55% 70% at 12% 0%, rgba(43, 90, 140, 0.09), transparent 62%),
+    radial-gradient(ellipse 60% 75% at 92% 100%, rgba(14, 117, 129, 0.1), transparent 60%),
+    var(--color-surface-alt);
+}
+
+.section__head {
+  margin-bottom: clamp(32px, 5vw, 56px);
+  max-width: 640px;
+}
+
+.section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 12px;
+}
+
+/* Petit filet degrade devant le sur-titre de chaque section. */
+.section__eyebrow::before {
+  content: '';
+  width: 26px;
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--h-blue), var(--h-teal));
+}
+
+.section__title {
+  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+}
+
+.section__lead {
+  margin-top: 14px;
+  color: var(--color-text-soft);
+  font-size: 1.05rem;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  transition: background var(--transition), color var(--transition),
+    border-color var(--transition), transform var(--transition);
+}
+.btn:active { transform: translateY(1px); }
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn--primary:hover {
+  background: var(--color-accent-hover);
+  color: #fff;
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--color-accent);
+  /* --color-border (#e3e7ec) etait trop clair : a cote du bouton plein, le ghost
+     passait pour du texte brut au lieu d un bouton. */
+  border-color: #ccd6e2;
+}
+.btn--ghost:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+}
+
+/* ---------- Tags ---------- */
+.tag {
+  display: inline-block;
+  padding: 4px 11px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-text-soft);
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 999px;
+}
+.section--alt .tag {
+  background: var(--color-surface);
+}
+
+/* ---------- Reveal on scroll ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Accessibilité : lien d'évitement */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--color-accent);
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 0 0 var(--radius-sm) 0;
+  z-index: 200;
+}
+.skip-link:focus {
+  left: 0;
+  color: #fff;
+}
+
+/* ---------- Ajustements mobile ---------- */
+@media (max-width: 560px) {
+  /* Cibles tactiles : 46px de haut minimum (les boutons tombaient a ~44px, limite). */
+  .btn {
+    padding: 12px 18px;
+    min-height: 46px;
+    font-size: 0.92rem;
+  }
+
+  .section {
+    padding-block: clamp(52px, 12vw, 72px);
+  }
+  .section__head {
+    margin-bottom: 28px;
+  }
+  .section__lead {
+    font-size: 1rem;
+    margin-top: 12px;
+  }
+  .section__eyebrow {
+    font-size: 0.74rem;
+    letter-spacing: 0.07em;
+  }
+}

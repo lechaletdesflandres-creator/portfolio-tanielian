@@ -1,0 +1,90 @@
+.timeline {
+  position: relative;
+  margin: 0;
+  padding-left: 28px;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.timeline__item {
+  position: relative;
+  padding-bottom: 30px;
+}
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__dot {
+  position: absolute;
+  left: -28px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--color-surface);
+  border: 2px solid var(--color-accent);
+}
+
+.timeline__period {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--color-accent);
+  margin-bottom: 4px;
+}
+.timeline__role {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.timeline__place {
+  color: var(--color-text-soft);
+  font-size: 0.92rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+.timeline__desc {
+  color: var(--color-text-soft);
+  font-size: 0.95rem;
+  margin-top: 6px;
+  max-width: 600px;
+}
+
+/* ---------- Couleur par entree de parcours ---------- */
+.timeline__item[data-entry='current'] { --g: var(--h-blue); }
+.timeline__item[data-entry='resto'] { --g: var(--h-green); }
+.timeline__item[data-entry='cvc'] { --g: var(--h-amber); }
+.timeline__item[data-entry='formation'] { --g: var(--h-violet); }
+
+/* Le rail suit la meme progression de teintes que les pastilles. */
+.timeline::before {
+  background: linear-gradient(
+    180deg,
+    var(--h-blue),
+    var(--h-green) 34%,
+    var(--h-amber) 67%,
+    var(--h-violet)
+  );
+  opacity: 0.55;
+}
+
+.timeline__dot {
+  border-color: var(--g);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--g) 12%, transparent);
+}
+
+.timeline__period {
+  color: var(--g);
+}
+
+/* L'entree en cours est la seule pleine : elle attire l'oeil sur le poste actuel. */
+.timeline__item[data-entry='current'] .timeline__dot {
+  background: var(--g);
+}

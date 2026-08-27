@@ -1,0 +1,122 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* Trois halos tres dilues (bleu, petrole, ambre) : ils colorent le fond sans
+     jamais passer sous le texte assez fort pour entamer le contraste. */
+  background:
+    radial-gradient(ellipse 70% 55% at 82% 8%, rgba(14, 117, 129, 0.16), transparent 62%),
+    radial-gradient(ellipse 60% 50% at 8% 22%, rgba(43, 90, 140, 0.14), transparent 60%),
+    radial-gradient(ellipse 55% 45% at 62% 92%, rgba(143, 100, 21, 0.09), transparent 65%),
+    var(--color-bg);
+  /* Le bas est volontairement tres court : la section « À propos » apporte
+     deja son propre padding-top (reduit lui aussi, voir #about dans
+     global.css). Les deux s'additionnaient et creusaient un trou de ~230px
+     entre les boutons du hero et l'ancre A PROPOS. */
+  padding-block: clamp(56px, 13vw, 150px) clamp(8px, 1.5vw, 18px);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  max-width: 780px;
+}
+
+.hero__role {
+  /* 0.9rem + 0.08em d'interlettrage debordait sur les petits ecrans : on laisse respirer. */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: clamp(0.75rem, 3.1vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--h-teal);
+  margin-bottom: clamp(12px, 2.5vw, 18px);
+  padding: 6px 14px 6px 12px;
+  border-radius: 999px;
+  background: var(--h-teal-soft);
+  border: 1px solid rgba(14, 117, 129, 0.18);
+}
+
+/* Petit point qui « respire » : signale un site vivant sans animation lourde. */
+.hero__role::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--h-teal);
+  box-shadow: 0 0 0 0 rgba(14, 117, 129, 0.45);
+  animation: hero-pulse 2.8s ease-out infinite;
+}
+
+@keyframes hero-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(14, 117, 129, 0.45); }
+  70% { box-shadow: 0 0 0 8px rgba(14, 117, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(14, 117, 129, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__role::before { animation: none; }
+}
+
+/* Le nom prend le degrade de la famille chromatique. */
+.hero__title {
+  background: linear-gradient(103deg, var(--color-text) 22%, var(--h-blue) 58%, var(--h-teal) 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero__title {
+  /* La borne basse etait a 2.6rem : le titre restait bloque a ~42px sur telephone. */
+  font-size: clamp(2rem, 8vw, 4.6rem);
+  letter-spacing: -0.03em;
+  overflow-wrap: break-word;
+}
+
+.hero__tagline {
+  margin-top: clamp(16px, 3vw, 22px);
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  color: var(--color-text-soft);
+  max-width: 640px;
+  line-height: 1.55;
+}
+
+.hero__cta {
+  margin-top: clamp(26px, 5vw, 36px);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Leger motif de grille en fond, tres discret */
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(31, 58, 95, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 58, 95, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 70% 0%, #000 0%, transparent 70%);
+  mask-image: radial-gradient(ellipse 80% 60% at 70% 0%, #000 0%, transparent 70%);
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  /* Trois boutons se cassaient en 2 lignes bancales : 2 + 1 pleine largeur, c'est net. */
+  .hero__cta {
+    gap: 10px;
+  }
+  .hero__cta .btn {
+    flex: 1 1 calc(50% - 5px);
+    justify-content: center;
+    padding-inline: 12px;
+  }
+  .hero__cta .btn:nth-child(3) {
+    flex-basis: 100%;
+  }
+
+  .hero__grid {
+    background-size: 32px 32px;
+  }
+}

@@ -1,0 +1,57 @@
+:root {
+  /* Palette — light, épuré, accent bleu acier / anthracite */
+  --color-bg: #fafbfc;            /* fond blanc cassé */
+  --color-surface: #ffffff;       /* cards */
+  --color-surface-alt: #f2f4f7;   /* sections alternées / tags */
+  --color-border: #e3e7ec;
+  --color-text: #16202e;          /* anthracite */
+  --color-text-soft: #5b6b7e;     /* gris-bleu secondaire */
+  --color-text-faint: #8a98a8;
+  --color-accent: #1f3a5f;        /* bleu acier */
+  --color-accent-hover: #2b4f80;
+  --color-accent-soft: #eaf0f7;   /* fond accent très clair */
+
+  /* ---------- Famille chromatique ----------
+     Six teintes calées sur la même clarté (L ≈ 35-40 %) et la même saturation
+     moyenne : elles se lisent comme un seul système, pas comme six couleurs
+     empruntées. Chacune est affectée à un domaine (compétences, projets,
+     parcours) pour que la couleur porte du sens et pas de la décoration.
+     Toutes passent le contraste AA sur fond blanc et sur leur variante -soft. */
+  --h-blue: #2b5a8c;
+  --h-teal: #0e7581;
+  --h-violet: #5d54a4;
+  --h-green: #2f7a58;
+  --h-amber: #8f6415;
+  --h-rose: #a34a5e;
+
+  --h-blue-soft: #eaf1f8;
+  --h-teal-soft: #e4f2f3;
+  --h-violet-soft: #eeecf7;
+  --h-green-soft: #e6f2ec;
+  --h-amber-soft: #f7f0e2;
+  --h-rose-soft: #f9ecef;
+
+  /* Teinte par défaut d'un bloc coloré : chaque carte redéfinit --g. */
+  --g: var(--color-accent);
+  --g-soft: var(--color-accent-soft);
+
+  /* Fond sombre (pied de page) */
+  --color-ink: #101d2e;
+  --color-ink-soft: #8fa3bd;
+
+  /* Typographie */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Rythme */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --shadow-sm: 0 1px 2px rgba(22, 32, 46, 0.04), 0 1px 3px rgba(22, 32, 46, 0.06);
+  --shadow-md: 0 6px 24px rgba(22, 32, 46, 0.08);
+
+  --maxw: 1080px;
+  --gutter: clamp(20px, 5vw, 48px);
+  --section-pad: clamp(64px, 9vw, 120px);
+
+  --transition: 180ms ease;
+}

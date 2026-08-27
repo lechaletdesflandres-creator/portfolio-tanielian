@@ -1,0 +1,87 @@
+.skills__grid {
+  display: grid;
+  /* 2 cartes par rangee, pas 3 : les libellés tiennent en 2 colonnes internes
+     (~250px chacune) au lieu de ~125px, ou « Méthodes / maintenance
+     industrielle » se repliait sur trois lignes. */
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(18px, 2.5vw, 24px);
+}
+
+/* Une teinte par domaine : la couleur identifie le bloc au lieu de le decorer. */
+.skills__card[data-group='data'] { --g: var(--h-blue); --g-soft: var(--h-blue-soft); }
+.skills__card[data-group='bi'] { --g: var(--h-teal); --g-soft: var(--h-teal-soft); }
+.skills__card[data-group='automation'] { --g: var(--h-violet); --g-soft: var(--h-violet-soft); }
+.skills__card[data-group='web'] { --g: var(--h-green); --g-soft: var(--h-green-soft); }
+.skills__card[data-group='method'] { --g: var(--h-amber); --g-soft: var(--h-amber-soft); }
+.skills__card[data-group='domain'] { --g: var(--h-rose); --g-soft: var(--h-rose-soft); }
+
+.skills__card {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  padding: clamp(20px, 2.5vw, 26px);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition), transform var(--transition),
+    border-color var(--transition);
+}
+
+/* Filet colore en haut de carte. */
+.skills__card::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: var(--g);
+}
+
+.skills__card:hover {
+  transform: translateY(-2px);
+  border-color: var(--g);
+  box-shadow: var(--shadow-md);
+}
+
+.skills__group-title {
+  font-size: 1.02rem;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--g);
+}
+
+/* Deux colonnes de largeurs egales. En pastilles qui passent librement a la
+   ligne, les libelles allant de « S3 » a « Méthodes / maintenance
+   industrielle », les fins de ligne partaient dans tous les sens. */
+.skills__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+/* Les pastilles reprennent la teinte de leur carte, en fond tres dilue. */
+.skills__list .tag {
+  display: flex;
+  align-items: center;
+  padding: 7px 14px;
+  text-align: left;
+  color: var(--g);
+  background: var(--g-soft);
+  border-color: transparent;
+}
+
+/* Une carte par rangee : elle reste assez large pour garder 2 colonnes de
+   libelles lisibles, ce qui ne serait plus le cas a 2 cartes par rangee. */
+@media (max-width: 900px) {
+  .skills__grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Sur telephone, 2 colonnes internes redonneraient ~150px par libelle :
+   on repasse a une seule colonne. */
+@media (max-width: 560px) {
+  .skills__list {
+    grid-template-columns: 1fr;
+  }
+}

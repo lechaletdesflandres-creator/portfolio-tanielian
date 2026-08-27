@@ -1,0 +1,89 @@
+.about__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: clamp(32px, 6vw, 72px);
+  align-items: start;
+}
+
+.about__text p {
+  color: var(--color-text-soft);
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+.about__text p + p {
+  margin-top: 18px;
+}
+
+.about__photo {
+  margin: 0;
+}
+.about__photo-img {
+  width: 100%;
+  /* Indispensable : sans height:auto, l attribut HTML height="800" reste actif comme
+     presentational hint, la hauteur n est plus auto et aspect-ratio est ignore
+     -> l image partait en 200x800 sur mobile et 350x800 sur desktop. */
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-md);
+}
+.about__photo-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  aspect-ratio: 4 / 5;
+  background: var(--color-surface);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  color: var(--color-text-faint);
+}
+.about__photo-mark {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--color-accent-soft);
+  color: var(--color-accent);
+  font-size: 1.4rem;
+  font-weight: 800;
+}
+.about__photo-caption {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.about__timeline-title {
+  margin-top: clamp(48px, 8vw, 88px);
+  margin-bottom: 28px;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 760px) {
+  .about__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  /* Portrait centre au-dessus du texte : cale a 260px et colle a gauche, il flottait dans le vide. */
+  .about__aside {
+    order: -1;
+    width: 100%;
+    max-width: 230px;
+    margin-inline: auto;
+  }
+  .about__text p {
+    font-size: 1rem;
+  }
+  .about__text p + p {
+    margin-top: 14px;
+  }
+  .about__timeline-title {
+    font-size: 1.15rem;
+    margin-bottom: 22px;
+  }
+}

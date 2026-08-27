@@ -1,0 +1,78 @@
+/* Bloc sombre : le site enchainait blanc / gris clair jusqu'en bas, il lui
+   manquait un point d'appui. Le filet superieur reprend les six teintes. */
+.footer {
+  position: relative;
+  padding-block: 52px;
+  background:
+    radial-gradient(ellipse 60% 120% at 88% 0%, rgba(14, 117, 129, 0.28), transparent 62%),
+    radial-gradient(ellipse 55% 110% at 6% 100%, rgba(43, 90, 140, 0.3), transparent 60%),
+    var(--color-ink);
+  color: #fff;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--h-blue),
+    var(--h-teal),
+    var(--h-green),
+    var(--h-amber),
+    var(--h-rose),
+    var(--h-violet)
+  );
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.footer__name {
+  font-weight: 800;
+  font-size: 1.05rem;
+}
+.footer__tagline {
+  color: var(--color-text-faint);
+  font-size: 0.9rem;
+  margin-top: 2px;
+}
+
+.footer__meta {
+  text-align: right;
+  color: var(--color-text-soft);
+  font-size: 0.88rem;
+}
+.footer__rights {
+  color: var(--color-text-faint);
+  margin-top: 4px;
+}
+
+@media (max-width: 560px) {
+  .footer__meta {
+    text-align: left;
+  }
+}
+
+/* Texte sur fond sombre : les gris clairs du theme clair ne passent plus. */
+.footer__name {
+  color: #fff;
+}
+.footer__tagline {
+  /* Pas var(--h-teal) : #0e7581 sur #101d2e ne passe pas le contraste. */
+  color: #62c8d4;
+  font-weight: 600;
+}
+.footer__meta {
+  color: var(--color-ink-soft);
+}
+.footer__rights {
+  /* #6d829e tombait a 4.31:1 sur le fond sombre, sous le seuil AA de 4.5. */
+  color: #8497b0;
+}
