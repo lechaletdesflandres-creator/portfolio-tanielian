@@ -9,7 +9,15 @@ export const projects = [
   {
     id: 'powerbi',
     featured: true,
-    stack: ['Power BI Desktop & Service', 'DAX', 'Power Query (M)', 'RLS / Audiences', 'VAL → PROD'],
+    stack: [
+      'Power BI Desktop & Service',
+      'DAX',
+      'Power Query (M)',
+      'RLS / Audiences',
+      'VAL → PROD',
+      'SAP',
+      'SEQUOIA',
+    ],
     link: null,
   },
   {
