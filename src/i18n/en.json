@@ -63,10 +63,14 @@
     "items": {
       "powerbi": {
         "name": "Governed BI platform",
-        "context": "Monitoring the performance and availability of passenger equipment at Paris-Orly on a multi-activity Power BI platform, and producing the quality-of-service data handed over to the IT department.",
+        "context": "Monitoring the performance and availability of 310 passenger-facing electromechanical assets at Paris-Orly (67 jet bridges, 134 visual docking guidance systems, 400 Hz ground power converters), on a multi-activity Power BI platform, and producing the quality-of-service data handed over to the IT department.",
         "done": "Designed availability dashboards and advanced DAX measures (dynamic Top N, time-band weighted durations), drill-through and handover documentation. Automated a Power BI flow that pulls data from the SAP CMMS and from SEQUOIA, the work-order declaration interface, formats it and files it into the IT department’s document store, where it feeds the QDS (quality-of-service) engine. Beyond design: administering the “Made by ORYE” and “Made by ORYE VAL” workspaces, validation-then-production governance, publishing and automation rights for reports, and managing several audiences with strict isolation of confidential data between activities.",
         "value": "Since 2025 the team has been autonomous on automating its own indicators: where every new automation used to go through a request to the IT department, I now administer the workspaces and implement it directly. On the business side, manual Excel calculations have been replaced by automated, reliable measures tracked by operational teams within a controlled distribution framework.",
         "metrics": [
+          {
+            "value": "310",
+            "label": "assets tracked through indicators"
+          },
           {
             "value": "2025",
             "label": "administration delegated by the IT department"
@@ -80,8 +84,22 @@
       "pipeline": {
         "name": "Multi-source data reconciliation",
         "context": "Connecting maintenance and operations around the aircraft stands at Paris-Orly. The two departments worked from separate data: for any given time slot, nobody could say what had actually happened on a stand, or why.",
-        "done": "Integration of five heterogeneous sources owned by four different departments: the flight schedule supplied by INGEX on the operations side, stand supervision deployed by S2A (the automated airport system), work orders declared in SEQUOIA, PCA meter readings, and contractor field reports received as Excel files. Each with its own format, granularity and reference data. A pipeline of 4 chained Python scripts (batch orchestration with timestamped logs): normalisation, cleaning and regex extraction, resolving many-to-many relationships via reference tables, then temporal matching in 10-minute slots with classification into 6 states. Adjudication of discrepancies between automated sources and human reporting. Output as CSV and a large-format PDF matrix for operational display.",
-        "value": "A single, traceable account of what actually happened on each stand, where maintenance and operations had been reasoning from disconnected data. Automatic, reproducible qualification, fed downstream into Power BI (Import mode + drill-through)."
+        "done": "Integration of five heterogeneous sources owned by four different departments: the flight schedule supplied by INGEX on the operations side, stand supervision deployed by S2A (the automated airport system), work orders declared in SEQUOIA, PCA meter readings, and field reports from three contractors received as Excel files. Each with its own format, granularity and reference data. A pipeline of 4 chained Python scripts (batch orchestration with timestamped logs): normalisation, cleaning and regex extraction, resolving many-to-many relationships via reference tables, then temporal matching in 10-minute slots with classification into 6 states. Adjudication of discrepancies between automated sources and human reporting. Output as CSV and a large-format PDF matrix for operational display. A full run covers all 57 stands in 2 minutes, cross-checking several thousand values.",
+        "value": "A single, traceable account of what actually happened on each stand, where maintenance and operations had been reasoning from disconnected data. Automatic, reproducible qualification, fed downstream into Power BI (Import mode + drill-through).",
+        "metrics": [
+          {
+            "value": "57",
+            "label": "aircraft stands covered"
+          },
+          {
+            "value": "5",
+            "label": "sources reconciled, 4 departments"
+          },
+          {
+            "value": "2 min",
+            "label": "per full run"
+          }
+        ]
       },
       "donpa": {
         "name": "Data-driven product management",
@@ -99,7 +117,7 @@
             "label": "carry-over detected"
           }
         ],
-        "context": "DonPa, a mobile party game built by a team of three, none of them working on it full time. Ten game modes to design, hundreds of content lines to write and review, and no process at all. The risk was never technical: it was losing track of who was doing what, reopening the same debates three times over, and never shipping. My role: project lead and product owner.",
+        "context": "DonPa, a mobile party game built by a team of three, none of them working on it full time. Ten game modes to design, close to 4,000 content cards to write and review, and no process at all. The risk was never technical: it was losing track of who was doing what, reopening the same debates three times over, and never shipping. My role: project lead and product owner.",
         "done": "Built a single tracking system, light enough that nobody would work around it and structured enough to be measurable. The property schema was designed so every task could be filtered along four independent axes (status, sprint, priority, workstream, game mode), with six filtered views over that one source rather than several separate bases. Two structuring choices: sprints as a multi-select, so a carried-over task keeps its original sprint and the slippage becomes data instead of vanishing; and dedicated \"to decide\" and \"standby\" statuses, because with three people the real cost is indecision, not execution. A sprint rhythm calibrated for a non-dedicated team: scope frozen at kickoff, mid-sprint arrivals sent to the backlog by default, an explicit definition of done where the person who writes the code is not the one who validates it, and cross-review of all content by the three members before release. Finally, the board connected over MCP and queried in SQL to produce quantified progress reviews, delivered as PDF reports.",
         "value": "Measurement revealed that 41% of tasks had been carried over at least once, a figure that would have stayed invisible without the multi-select structure. Diagnosis: the first two sprints had been scoped against theoretical availability rather than the real capacity of a team working evenings. Corrections applied from the next sprint on: scope tightened around high priorities, remaining work readable at a glance, and a clean split between content work, which parallelises, and development, which does not. The Kanban stops being a wall of sticky notes and becomes a dataset to steer by."
       },
@@ -107,7 +125,7 @@
         "name": "Restaurant management web app",
         "context": "A mobile-first application for a Lebanese-Armenian restaurant (events, private bookings), from design through to production.",
         "done": "Client side: animated home page, an event quote form with real-time pricing and a calendar blocking booked dates, PDF quote generation, reviews and an interactive map. Secure admin side: dashboard (quote and event tracking, search, sorting, statuses), PDF quotes and invoices, Google Calendar sync, content management.",
-        "value": "A complete end-to-end tool, from front end to cloud, that digitises quoting and back-office management."
+        "value": "Quotes used to be written by hand: no tracking of what had been sent out, and no certainty about the figures quoted. The application fixes all three at once, with automatic generation, tracking of every quote through to the event, and reliable pricing. A complete end-to-end tool, from front end to cloud."
       },
       "compta": {
         "name": "Accounting declarations automation",
