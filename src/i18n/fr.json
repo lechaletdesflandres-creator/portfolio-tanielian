@@ -19,26 +19,26 @@
     "eyebrow": "À propos",
     "title": "Ingénieur de formation, praticien de la data par la pratique",
     "p1": "Chargé Méthodes Maintenance au sein d'un grand groupe aéroportuaire, mon quotidien est en réalité fortement orienté data : conception de KPI, modélisation et publication de tableaux de bord Power BI, automatisation Python et analyse de la disponibilité des actifs.",
-    "p2": "J'ai construit mes compétences data par des projets concrets plutôt que par une formation théorique : pipelines de données, plateformes BI gouvernées, automatisations à forte valeur métier. En parallèle, je gère et développe seul l'application web d'un restaurant familial — du front React jusqu'au cloud AWS.",
-    "p3": "Mon objectif : évoluer vers des rôles Data / BI, en gardant ce qui fait ma force — relier la technique aux besoins métier réels.",
+    "p2": "J'ai construit mes compétences data par des projets concrets plutôt que par une formation théorique : pipelines de données, plateformes BI gouvernées, automatisations à forte valeur métier. En parallèle, je gère et développe l'application web d'un restaurant familial, du front React jusqu'au cloud AWS.",
+    "p3": "Mon objectif : évoluer vers des rôles Data / BI, sans perdre ce qui fait ma force, la capacité à relier la technique aux besoins métier réels.",
     "photoAlt": "Photo de Norayr Tanielian (à venir)",
     "photoPlaceholder": "Photo à venir",
     "timelineTitle": "Parcours",
     "timeline": {
       "current": {
-        "period": "2023 — aujourd'hui",
-        "role": "Chargé Méthodes Maintenance — orienté data",
+        "period": "Depuis 2023",
+        "role": "Chargé Méthodes Maintenance, orienté data",
         "place": "Groupe aéroportuaire (Île-de-France)",
         "desc": "Évolution de fait vers un rôle data/BI : Power BI, Python, KPI, gouvernance des données."
       },
       "resto": {
-        "period": "2018 — aujourd'hui",
+        "period": "Depuis 2018",
         "role": "Gérant & développeur",
         "place": "Le Chalet des Flandres",
-        "desc": "Gestion quotidienne, événementiel, administration — et développement complet de l'application web du restaurant."
+        "desc": "Gestion quotidienne, événementiel et administration, ainsi que le développement complet de l'application web du restaurant."
       },
       "cvc": {
-        "period": "2021 — 2022",
+        "period": "2021-2022",
         "role": "Technicien CVC",
         "place": "Société de maintenance",
         "desc": "Maintenance préventive et corrective sur site client."
@@ -46,7 +46,7 @@
       "formation": {
         "period": "2023",
         "role": "Diplôme d'ingénieur",
-        "place": "ECAM-EPMI — Mécatronique & Productique",
+        "place": "ECAM-EPMI, Mécatronique & Productique",
         "desc": "Cycle ingénieur après classes préparatoires aux grandes écoles (PSI). TOEIC 935/990."
       }
     }
@@ -62,20 +62,20 @@
     "liveLink": "Voir le site en ligne",
     "items": {
       "powerbi": {
-        "name": "Plateforme BI & tableaux de bord Power BI",
+        "name": "Plateforme décisionnelle gouvernée",
         "context": "Pilotage de la performance et de la disponibilité d'équipements via des indicateurs, sur une plateforme BI multi-activités.",
-        "done": "Conception de tableaux de bord de disponibilité et de mesures DAX avancées (Top N dynamique, durées pondérées par plage horaire), drill-through et documentation de transfert. Au-delà de la conception : administration d'une plateforme BI gouvernée — droits de publication et d'automatisation des rapports sur Power BI Service, gouvernance multi-environnements (validation puis production), et gestion de plusieurs audiences avec cloisonnement strict des données confidentielles entre activités.",
+        "done": "Conception de tableaux de bord de disponibilité et de mesures DAX avancées (Top N dynamique, durées pondérées par plage horaire), drill-through et documentation de transfert. Au-delà de la conception : administration d'une plateforme BI gouvernée, avec droits de publication et d'automatisation des rapports sur Power BI Service, gouvernance multi-environnements (validation puis production), et gestion de plusieurs audiences avec cloisonnement strict des données confidentielles entre activités.",
         "value": "Remplacement de calculs Excel manuels par des mesures automatisées et fiables, suivies par les équipes opérationnelles, dans un cadre de diffusion sécurisé et maîtrisé."
       },
       "pipeline": {
-        "name": "Pipeline Python de réconciliation multi-sources",
+        "name": "Réconciliation de données multi-sources",
         "context": "Relier la maintenance et l'exploitation autour des postes avions. Les deux directions raisonnaient sur des données séparées : personne ne pouvait dire, pour un créneau donné, ce qui s'était réellement passé sur un poste ni pourquoi.",
-        "done": "Intégration de cinq sources hétérogènes relevant de quatre entités distinctes — programme des vols côté exploitation, supervision automatisée des postes, outil de gestion des interventions techniciens, relevés de compteurs d'équipements, comptes rendus des prestataires — chacune avec son format, sa granularité et son référentiel propres. Pipeline de 4 scripts Python chaînés (orchestration par script batch et logs horodatés) : normalisation, nettoyage et extraction par expressions régulières, résolution de relations many-to-many via tables de référence, puis matching temporel par créneaux de 10 minutes avec classification en 6 états. Arbitrage des écarts entre sources automatiques et déclaratif humain. Sortie en CSV et matrice PDF grand format pour affichage opérationnel.",
+        "done": "Intégration de cinq sources hétérogènes relevant de quatre entités distinctes (programme des vols côté exploitation, supervision automatisée des postes, outil de gestion des interventions techniciens, relevés de compteurs d'équipements, comptes rendus des prestataires), chacune avec son format, sa granularité et son référentiel propres. Pipeline de 4 scripts Python chaînés (orchestration par script batch et logs horodatés) : normalisation, nettoyage et extraction par expressions régulières, résolution de relations many-to-many via tables de référence, puis matching temporel par créneaux de 10 minutes avec classification en 6 états. Arbitrage des écarts entre sources automatiques et déclaratif humain. Sortie en CSV et matrice PDF grand format pour affichage opérationnel.",
         "value": "Une lecture unique et traçable de ce qui s'est réellement passé sur chaque poste, là où maintenance et exploitation travaillaient sur des données disjointes. Qualification automatique et reproductible, intégrée en aval dans Power BI (mode Import + drill-through)."
       },
       "resto": {
         "name": "Application web de gestion pour un restaurant",
-        "context": "Application mobile-first pour un restaurant de cuisine libanaise-arménienne (événementiel, privatisations). Conçue et développée en autonomie complète.",
+        "context": "Application mobile-first pour un restaurant de cuisine libanaise-arménienne (événementiel, privatisations), de la conception à la mise en production.",
         "done": "Côté client : accueil animé, formulaire de devis événement avec calcul de prix en temps réel et calendrier bloquant les dates réservées, génération de devis PDF, avis et carte interactive. Côté admin sécurisé : tableau de bord (suivi des devis et événements, recherche, tri, statuts), génération de devis et factures PDF, synchronisation Google Agenda, gestion des contenus.",
         "value": "Un outil complet de bout en bout, du front au cloud, qui digitalise la prise de devis et la gestion administrative."
       },

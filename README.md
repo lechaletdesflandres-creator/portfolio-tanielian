@@ -1,7 +1,7 @@
-# Portfolio — Norayr Tanielian
+# Portfolio de Norayr Tanielian
 
 Site portfolio bilingue FR/EN, orienté Data / Business Intelligence / KPI.
-Conçu, développé et déployé en autonomie complète.
+Conçu, développé et déployé de bout en bout.
 
 **→ [portfolio.tanielian.fr](https://portfolio.tanielian.fr)**
 
@@ -13,7 +13,7 @@ Conçu, développé et déployé en autonomie complète.
 
 Ce site est ma vitrine professionnelle, mais c'est aussi un projet en soi : pas de
 template, pas de générateur, pas de bibliothèque de composants. Tout est écrit à la
-main pour garder le contrôle sur trois choses qui comptent dans un site vitrine —
+main pour garder le contrôle sur trois choses qui comptent dans un site vitrine :
 le poids, l'accessibilité et la cohérence visuelle.
 
 Le code est donc lisible de bout en bout, et c'est volontaire.
@@ -23,7 +23,7 @@ Le code est donc lisible de bout en bout, et c'est volontaire.
 | | |
 |---|---|
 | **Front** | React 18, Vite 6 |
-| **Dépendances runtime** | `react`, `react-dom` — et rien d'autre |
+| **Dépendances runtime** | `react`, `react-dom`, et rien d'autre |
 | **Styles** | CSS natif, variables custom, aucune dépendance |
 | **i18n** | Contexte React maison, dictionnaires JSON externalisés |
 | **Hébergement** | AWS Amplify Hosting + CloudFront + Route 53 + ACM |
@@ -38,13 +38,13 @@ src/
 ├── components/     Un composant = un .jsx + un .css de même nom
 ├── data/           Contenu structuré (projets, compétences, liens)
 ├── i18n/           Contexte de langue + fr.json / en.json
-├── hooks/          useReveal — animations d'apparition au scroll
+├── hooks/          useReveal, animations d'apparition au scroll
 └── styles/         variables.css (tokens) + global.css (base, layout, utilitaires)
 ```
 
 **Séparation contenu / présentation.** Les composants ne contiennent aucun texte en
 dur : ils lisent des clés (`t('about.p1')`) et les structures dans `src/data/`. Ajouter
-un projet, c'est éditer deux fichiers de données — jamais un composant.
+un projet, c'est éditer deux fichiers de données, jamais un composant.
 
 **i18n symétrique.** `fr.json` et `en.json` exposent exactement les mêmes 79 clés. La
 langue est détectée depuis `navigator.language`, puis persistée en `localStorage`. Une
@@ -76,11 +76,11 @@ Changer une teinte se fait à un seul endroit et se propage à l'ensemble du sit
 ## Accessibilité et performance
 
 - **Contrastes WCAG AA vérifiés par script** sur tous les textes colorés, fond clair
-  comme fond sombre — y compris les pastilles teintées et le pied de page
+  comme fond sombre, y compris les pastilles teintées et le pied de page
 - Lien d'évitement, structure de titres cohérente, `:focus-visible` explicite
 - `prefers-reduced-motion` respecté : animations d'apparition et pulsation désactivées
 - Cibles tactiles à 44 px minimum sur mobile
-- Photo servie en 4 largeurs via `srcSet` / `sizes` — 7 ko sur mobile au lieu de 51
+- Photo servie en 4 largeurs via `srcSet` / `sizes` : 7 ko sur mobile au lieu de 51
 - Aucun débordement horizontal, vérifié par mesure DOM à 412, 900 et 1440 px
 
 ## Déploiement
@@ -95,7 +95,7 @@ Amplify, attente de fin de job, puis invalidation CloudFront.
 L'archive ZIP est **écrite à la main** plutôt que via l'outillage système. Sous
 Windows, `Compress-Archive` (PowerShell 5.1) écrit les chemins internes avec des
 antislashes ; Amplify ne les interprète alors pas comme des dossiers et l'intégralité
-de `/assets` part en 404 — sans le moindre message d'erreur au déploiement. Le script
+de `/assets` part en 404, sans le moindre message d'erreur au déploiement. Le script
 sérialise donc les en-têtes ZIP lui-même, avec des slashes.
 
 ## Développement
@@ -114,9 +114,9 @@ npm run dev
 
 ## Contact
 
-- **Site** — [portfolio.tanielian.fr](https://portfolio.tanielian.fr)
-- **LinkedIn** — [norayr-tanielian](https://www.linkedin.com/in/norayr-tanielian-a54264220)
-- **E-mail** — norayrgarotanielian@gmail.com
+- **Site** : [portfolio.tanielian.fr](https://portfolio.tanielian.fr)
+- **LinkedIn** : [norayr-tanielian](https://www.linkedin.com/in/norayr-tanielian-a54264220)
+- **E-mail** : norayrgarotanielian@gmail.com
 
 ---
 

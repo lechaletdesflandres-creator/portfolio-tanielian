@@ -19,26 +19,26 @@
     "eyebrow": "About",
     "title": "An engineer by training, a data practitioner by experience",
     "p1": "As a Maintenance Methods Specialist at a major airport group, my day-to-day work is in fact strongly data-driven: designing KPIs, modelling and publishing Power BI dashboards, automating with Python, and analysing asset availability.",
-    "p2": "I built my data skills through concrete projects rather than formal training: data pipelines, governed BI platforms, high-value business automations. On the side, I single-handedly run and develop the web application of a family restaurant — from the React front end to the AWS cloud.",
-    "p3": "My goal: to grow into Data / BI roles, while keeping my core strength — connecting technology to real business needs.",
+    "p2": "I built my data skills through concrete projects rather than formal training: data pipelines, governed BI platforms, high-value business automations. On the side, I run and develop the web application of a family restaurant, from the React front end to the AWS cloud.",
+    "p3": "My goal: to grow into Data / BI roles without losing my core strength, the ability to connect technology to real business needs.",
     "photoAlt": "Photo of Norayr Tanielian (coming soon)",
     "photoPlaceholder": "Photo coming soon",
     "timelineTitle": "Background",
     "timeline": {
       "current": {
-        "period": "2023 — present",
-        "role": "Maintenance Methods Specialist — data-oriented",
+        "period": "Since 2023",
+        "role": "Maintenance Methods Specialist, data-oriented",
         "place": "Airport group (Paris region)",
         "desc": "A de facto shift toward a data/BI role: Power BI, Python, KPIs, data governance."
       },
       "resto": {
-        "period": "2018 — present",
+        "period": "Since 2018",
         "role": "Manager & developer",
         "place": "Le Chalet des Flandres",
-        "desc": "Daily operations, events and administration — plus the full development of the restaurant's web application."
+        "desc": "Daily operations, events and administration, plus the full development of the restaurant's web application."
       },
       "cvc": {
-        "period": "2021 — 2022",
+        "period": "2021-2022",
         "role": "HVAC Technician",
         "place": "Maintenance company",
         "desc": "Preventive and corrective maintenance on client sites."
@@ -46,7 +46,7 @@
       "formation": {
         "period": "2023",
         "role": "Engineering degree (MEng)",
-        "place": "ECAM-EPMI — Mechatronics & Industrial Production",
+        "place": "ECAM-EPMI, Mechatronics & Industrial Production",
         "desc": "Engineering cycle after CPGE, France's selective two-year science track (PSI). TOEIC 935/990."
       }
     }
@@ -62,20 +62,20 @@
     "liveLink": "Visit the live site",
     "items": {
       "powerbi": {
-        "name": "BI platform & Power BI dashboards",
+        "name": "Governed BI platform",
         "context": "Monitoring equipment performance and availability through KPIs, on a multi-activity BI platform.",
-        "done": "Designed availability dashboards and advanced DAX measures (dynamic Top N, time-band weighted durations), drill-through and handover documentation. Beyond design: administering a governed BI platform — publishing and automation rights for reports on Power BI Service, multi-environment governance (validation then production), and managing several audiences with strict isolation of confidential data between activities.",
+        "done": "Designed availability dashboards and advanced DAX measures (dynamic Top N, time-band weighted durations), drill-through and handover documentation. Beyond design: administering a governed BI platform, with publishing and automation rights for reports on Power BI Service, multi-environment governance (validation then production), and managing several audiences with strict isolation of confidential data between activities.",
         "value": "Manual Excel calculations replaced by automated, reliable measures tracked by operational teams, within a secure and controlled distribution framework."
       },
       "pipeline": {
-        "name": "Python multi-source reconciliation pipeline",
+        "name": "Multi-source data reconciliation",
         "context": "Connecting maintenance and operations around aircraft stands. The two departments worked from separate data: for any given time slot, nobody could say what had actually happened on a stand, or why.",
-        "done": "Integration of five heterogeneous sources owned by four different departments — the flight schedule from operations, automated stand supervision, the technician work-order system, equipment meter readings, and contractor field reports — each with its own format, granularity and reference data. A pipeline of 4 chained Python scripts (batch orchestration with timestamped logs): normalisation, cleaning and regex extraction, resolving many-to-many relationships via reference tables, then temporal matching in 10-minute slots with classification into 6 states. Adjudication of discrepancies between automated sources and human reporting. Output as CSV and a large-format PDF matrix for operational display.",
+        "done": "Integration of five heterogeneous sources owned by four different departments (the flight schedule from operations, automated stand supervision, the technician work-order system, equipment meter readings, and contractor field reports), each with its own format, granularity and reference data. A pipeline of 4 chained Python scripts (batch orchestration with timestamped logs): normalisation, cleaning and regex extraction, resolving many-to-many relationships via reference tables, then temporal matching in 10-minute slots with classification into 6 states. Adjudication of discrepancies between automated sources and human reporting. Output as CSV and a large-format PDF matrix for operational display.",
         "value": "A single, traceable account of what actually happened on each stand, where maintenance and operations had been reasoning from disconnected data. Automatic, reproducible qualification, fed downstream into Power BI (Import mode + drill-through)."
       },
       "resto": {
         "name": "Restaurant management web app",
-        "context": "A mobile-first application for a Lebanese-Armenian restaurant (events, private bookings). Designed and developed entirely on my own.",
+        "context": "A mobile-first application for a Lebanese-Armenian restaurant (events, private bookings), from design through to production.",
         "done": "Client side: animated home page, an event quote form with real-time pricing and a calendar blocking booked dates, PDF quote generation, reviews and an interactive map. Secure admin side: dashboard (quote and event tracking, search, sorting, statuses), PDF quotes and invoices, Google Calendar sync, content management.",
         "value": "A complete end-to-end tool, from front end to cloud, that digitises quoting and back-office management."
       },

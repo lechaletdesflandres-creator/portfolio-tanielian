@@ -7,12 +7,12 @@ export const site = {
   phoneDisplay: '+33 7 67 22 32 29',
   linkedin: 'https://www.linkedin.com/in/norayr-tanielian-a54264220',
   resto: 'https://lechaletdesflandres.fr/',
-  // CV — POINT DE BRANCHEMENT UNIQUE.
+  // CV : POINT DE BRANCHEMENT UNIQUE.
   // Pour activer le bouton « CV (PDF) » de la barre de navigation :
   //   1. déposer le PDF dans public/cv-norayr-tanielian.pdf (ce nom exact) ;
   //   2. passer cvReady à true ci-dessous ;
   //   3. npm run build (le fichier de /public est copié tel quel dans /dist).
-  // Tant que cvReady vaut false, le bouton n'est pas rendu du tout — absent du DOM,
+  // Tant que cvReady vaut false, le bouton n'est pas rendu du tout, absent du DOM,
   // pas seulement masqué en CSS. Aucun lien mort, aucun CV obsolète exposé.
   cv: '/cv-norayr-tanielian.pdf',
   cvReady: false,
