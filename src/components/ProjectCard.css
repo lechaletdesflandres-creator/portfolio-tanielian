@@ -149,3 +149,37 @@
   background: var(--g-soft);
   border-color: transparent;
 }
+
+/* ---------- Chiffres cles (projets qui en declarent) ---------- */
+.pcard__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0;
+}
+
+.pcard__metric {
+  flex: 1 1 128px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: var(--g-soft);
+  border: 1px solid transparent;
+}
+
+.pcard__metric-value {
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--g);
+}
+
+.pcard__metric-label {
+  margin: 4px 0 0;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-text-soft);
+}
+
+.pcard[data-project='donpa'] { --g: var(--h-violet); --g-soft: var(--h-violet-soft); }

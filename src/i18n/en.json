@@ -53,7 +53,7 @@
   },
   "projects": {
     "eyebrow": "Projects",
-    "title": "Four projects, one logic: make data reliable and automated",
+    "title": "Five projects, one logic: making measurable what wasn't",
     "lead": "Sensitive business details are anonymised. I'm happy to walk through the technical specifics on request.",
     "contextLabel": "Context",
     "doneLabel": "What I did",
@@ -72,6 +72,26 @@
         "context": "Connecting maintenance and operations around aircraft stands. The two departments worked from separate data: for any given time slot, nobody could say what had actually happened on a stand, or why.",
         "done": "Integration of five heterogeneous sources owned by four different departments (the flight schedule from operations, automated stand supervision, the technician work-order system, equipment meter readings, and contractor field reports), each with its own format, granularity and reference data. A pipeline of 4 chained Python scripts (batch orchestration with timestamped logs): normalisation, cleaning and regex extraction, resolving many-to-many relationships via reference tables, then temporal matching in 10-minute slots with classification into 6 states. Adjudication of discrepancies between automated sources and human reporting. Output as CSV and a large-format PDF matrix for operational display.",
         "value": "A single, traceable account of what actually happened on each stand, where maintenance and operations had been reasoning from disconnected data. Automatic, reproducible qualification, fed downstream into Power BI (Import mode + drill-through)."
+      },
+      "donpa": {
+        "name": "Data-driven product management",
+        "metrics": [
+          {
+            "value": "143",
+            "label": "tasks tracked"
+          },
+          {
+            "value": "4",
+            "label": "sprints delivered"
+          },
+          {
+            "value": "41%",
+            "label": "carry-over detected"
+          }
+        ],
+        "context": "A mobile party game built by a team of three, none of them working on it full time. Ten game modes to design, hundreds of content lines to write and review, and no process at all. The risk was never technical: it was losing track of who was doing what, reopening the same debates three times over, and never shipping. My role: project lead and product owner.",
+        "done": "Built a single tracking system, light enough that nobody would work around it and structured enough to be measurable. The property schema was designed so every task could be filtered along four independent axes (status, sprint, priority, workstream, game mode), with six filtered views over that one source rather than several separate bases. Two structuring choices: sprints as a multi-select, so a carried-over task keeps its original sprint and the slippage becomes data instead of vanishing; and dedicated \"to decide\" and \"standby\" statuses, because with three people the real cost is indecision, not execution. A sprint rhythm calibrated for a non-dedicated team: scope frozen at kickoff, mid-sprint arrivals sent to the backlog by default, an explicit definition of done where the person who writes the code is not the one who validates it, and cross-review of all content by the three members before release. Finally, the board connected over MCP and queried in SQL to produce quantified progress reviews, delivered as PDF reports.",
+        "value": "Measurement revealed that 41% of tasks had been carried over at least once, a figure that would have stayed invisible without the multi-select structure. Diagnosis: the first two sprints had been scoped against theoretical availability rather than the real capacity of a team working evenings. Corrections applied from the next sprint on: scope tightened around high priorities, remaining work readable at a glance, and a clean split between content work, which parallelises, and development, which does not. The Kanban stops being a wall of sticky notes and becomes a dataset to steer by."
       },
       "resto": {
         "name": "Restaurant management web app",

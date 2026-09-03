@@ -14,6 +14,8 @@ export default function ProjectCard({ project }) {
 
       <h3 className="pcard__title">{t(`${base}.name`)}</h3>
 
+      <Metrics base={base} t={t} />
+
       <div className="pcard__block">
         <span className="pcard__label">{t('projects.contextLabel')}</span>
         <p>{t(`${base}.context`)}</p>
@@ -49,5 +51,22 @@ export default function ProjectCard({ project }) {
         </a>
       )}
     </article>
+  )
+}
+
+// Bandeau de chiffres cles, rendu seulement si le projet en declare dans l'i18n
+// sous `projects.items.<id>.metrics` (tableau de { value, label }).
+function Metrics({ base, t }) {
+  const metrics = t(`${base}.metrics`)
+  if (!Array.isArray(metrics) || metrics.length === 0) return null
+  return (
+    <dl className="pcard__metrics">
+      {metrics.map((m) => (
+        <div className="pcard__metric" key={m.label}>
+          <dt className="pcard__metric-value">{m.value}</dt>
+          <dd className="pcard__metric-label">{m.label}</dd>
+        </div>
+      ))}
+    </dl>
   )
 }

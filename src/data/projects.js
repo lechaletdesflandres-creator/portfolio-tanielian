@@ -19,6 +19,12 @@ export const projects = [
     link: null,
   },
   {
+    id: 'donpa',
+    featured: false,
+    stack: ['Notion (Kanban & bases)', 'SQL', 'MCP', 'Reporting PDF', 'Sprints & Kanban', 'JSON de contenu'],
+    link: null,
+  },
+  {
     id: 'resto',
     featured: false,
     stack: [
