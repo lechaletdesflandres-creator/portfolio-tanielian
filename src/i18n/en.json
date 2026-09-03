@@ -18,7 +18,7 @@
   "about": {
     "eyebrow": "About",
     "title": "An engineer by training, a data practitioner by experience",
-    "p1": "Maintenance Methods Specialist at Groupe ADP, Paris-Orly (ORYEG team, passenger equipment processes), my day-to-day work is in fact strongly data-driven: designing KPIs, modelling and publishing Power BI dashboards, automating with Python, and analysing asset availability.",
+    "p1": "Maintenance Methods Specialist at Groupe ADP, Paris-Orly (ORYEG team, passenger equipment processes). I work in the central Methods team, supporting the Aérogare (terminal), S2A (automated airport systems) and Utilities agencies, as well as the topics that cut across all three. Day-to-day work that is in fact strongly data-driven: designing KPIs, modelling and publishing Power BI dashboards, automating with Python, and analysing asset availability.",
     "p2": "I built my data skills through concrete projects rather than formal training: data pipelines, governed BI platforms, high-value business automations. On the side, I run and develop the web application of a family restaurant, from the React front end to the AWS cloud.",
     "p3": "My goal: to grow into Data / BI roles without losing my core strength, the ability to connect technology to real business needs.",
     "photoAlt": "Photo of Norayr Tanielian (coming soon)",
@@ -29,7 +29,7 @@
         "period": "Since 2023",
         "role": "Maintenance Methods Specialist, data-oriented",
         "place": "Groupe ADP, Paris-Orly (ORYEG team)",
-        "desc": "A de facto shift toward a data/BI role: Power BI, Python, KPIs, data governance. Administrator of the team’s BI workspaces since 2025."
+        "desc": "A central role supporting three agencies. A de facto shift toward a data/BI role: Power BI, Python, KPIs, data governance. Administrator of the team’s BI workspaces since 2025."
       },
       "resto": {
         "period": "Since 2018",
@@ -63,28 +63,28 @@
     "items": {
       "powerbi": {
         "name": "Governed BI platform",
-        "context": "Monitoring the performance and availability of 310 passenger-facing electromechanical assets at Paris-Orly (67 jet bridges, 134 visual docking guidance systems, 400 Hz ground power converters), on a multi-activity Power BI platform, and producing the quality-of-service data handed over to the IT department.",
+        "context": "Monitoring the performance and availability of passenger-facing equipment at Paris-Orly from the central Methods team, supporting several agencies: 310 electromechanical assets, 67 telescopic jet bridges, 134 visual docking guidance systems and the 400 Hz ground power converters. A multi-activity Power BI platform, and production of the quality-of-service data handed over to the IT department.",
         "done": "Designed availability dashboards and advanced DAX measures (dynamic Top N, time-band weighted durations), drill-through and handover documentation. Automated a Power BI flow that pulls data from the SAP CMMS and from SEQUOIA, the work-order declaration interface, formats it and files it into the IT department’s document store, where it feeds the QDS (quality-of-service) engine. Beyond design: administering the “Made by ORYE” and “Made by ORYE VAL” workspaces, validation-then-production governance, publishing and automation rights for reports, and managing several audiences with strict isolation of confidential data between activities.",
         "value": "Since 2025 the team has been autonomous on automating its own indicators: where every new automation used to go through a request to the IT department, I now administer the workspaces and implement it directly. On the business side, manual Excel calculations have been replaced by automated, reliable measures tracked by operational teams within a controlled distribution framework.",
         "metrics": [
           {
-            "value": "310",
+            "value": "500+",
             "label": "assets tracked through indicators"
+          },
+          {
+            "value": "3",
+            "label": "agencies supported from central Methods"
           },
           {
             "value": "2025",
             "label": "administration delegated by the IT department"
-          },
-          {
-            "value": "2",
-            "label": "BI workspaces administered (VAL and PROD)"
           }
         ]
       },
       "pipeline": {
         "name": "Multi-source data reconciliation",
         "context": "Connecting maintenance and operations around the aircraft stands at Paris-Orly. The two departments worked from separate data: for any given time slot, nobody could say what had actually happened on a stand, or why.",
-        "done": "Integration of five heterogeneous sources owned by four different departments: the flight schedule supplied by INGEX on the operations side, stand supervision deployed by S2A (the automated airport system), work orders declared in SEQUOIA, PCA meter readings, and field reports from three contractors received as Excel files. Each with its own format, granularity and reference data. A pipeline of 4 chained Python scripts (batch orchestration with timestamped logs): normalisation, cleaning and regex extraction, resolving many-to-many relationships via reference tables, then temporal matching in 10-minute slots with classification into 6 states. Adjudication of discrepancies between automated sources and human reporting. Output as CSV and a large-format PDF matrix for operational display. A full run covers all 57 stands in 2 minutes, cross-checking several thousand values.",
+        "done": "Integration of five heterogeneous sources owned by four different departments: the flight schedule supplied by INGEX on the operations side, stand supervision deployed by the S2A agency (automated airport systems), work orders declared in SEQUOIA, PCA meter readings, and field reports from three contractors received as Excel files. Each with its own format, granularity and reference data. A pipeline of 4 chained Python scripts (batch orchestration with timestamped logs): normalisation, cleaning and regex extraction, resolving many-to-many relationships via reference tables, then temporal matching in 10-minute slots with classification into 6 states. Adjudication of discrepancies between automated sources and human reporting. Output as CSV and a large-format PDF matrix for operational display. A full run covers all 57 stands in 2 minutes, cross-checking several thousand values.",
         "value": "A single, traceable account of what actually happened on each stand, where maintenance and operations had been reasoning from disconnected data. Automatic, reproducible qualification, fed downstream into Power BI (Import mode + drill-through).",
         "metrics": [
           {
