@@ -8,9 +8,9 @@
     "menu": "Menu"
   },
   "hero": {
-    "role": "Data · Business Intelligence · KPI",
+    "role": "Data · Business Intelligence · Industrialisation",
     "title": "Norayr Tanielian",
-    "tagline": "An engineer turned data practitioner. I design reliable metrics, automate reporting pipelines, and turn business data into decisions.",
+    "tagline": "Making complex data simple. An engineer turned data practitioner, I industrialise data processing in Python and put its Power BI reporting into production.",
     "ctaProjects": "View my projects",
     "ctaContact": "Get in touch",
     "ctaLinkedin": "LinkedIn"
@@ -18,9 +18,9 @@
   "about": {
     "eyebrow": "About",
     "title": "An engineer by training, a data practitioner by experience",
-    "p1": "Maintenance Methods Specialist at Groupe ADP, Paris-Orly (ORYEG team, passenger equipment processes). I work in the central Methods team, supporting the Aérogare (terminal), S2A (automated airport systems) and Utilities agencies, as well as the topics that cut across all three. Day-to-day work that is in fact strongly data-driven: designing KPIs, modelling and publishing Power BI dashboards, automating with Python, and analysing asset availability.",
+    "p1": "Maintenance Methods Specialist at Groupe ADP, Paris-Orly (ORYEG team, passenger equipment processes). I work in the central Methods team, supporting the Aérogare (terminal), S2A (automated airport systems) and Utilities agencies, as well as the topics that cut across all three. Day-to-day work that is in fact strongly data-driven: collecting and making operational data available, industrialising its processing in Python, and putting its Power BI reporting into production, within the group’s technical data policy.",
     "p2": "I built my data skills through concrete projects rather than formal training: data pipelines, governed BI platforms, high-value business automations. On the side, I run and develop the web application of a family restaurant, from the React front end to the AWS cloud.",
-    "p3": "My goal: to grow into Data / BI roles without losing my core strength, the ability to connect technology to real business needs.",
+    "p3": "My goal: a data engineer role, where I keep taking data processing from collection through to production, without losing my core strength, the ability to connect technology to real business needs.",
     "photoAlt": "Photo of Norayr Tanielian (coming soon)",
     "photoPlaceholder": "Photo coming soon",
     "timelineTitle": "Background",
@@ -137,7 +137,7 @@
   },
   "skills": {
     "eyebrow": "Skills",
-    "title": "A data toolbox, from scripts to governed dashboards",
+    "title": "A data toolbox, from scripts to production",
     "groups": {
       "db": "Databases",
       "dev": "Development & scripting",
@@ -151,14 +151,14 @@
   },
   "contact": {
     "eyebrow": "Contact",
-    "title": "Let's talk data, BI and KPIs",
-    "lead": "Open to conversations around data / BI. The easiest way: LinkedIn or email.",
+    "title": "Let’s talk data, BI and industrialisation",
+    "lead": "Open to conversations around data, BI and industrialising data pipelines. The easiest way: LinkedIn or email.",
     "emailLabel": "Email",
     "linkedinLabel": "LinkedIn",
     "phoneLabel": "Phone"
   },
   "footer": {
-    "tagline": "Data · Business Intelligence · KPI",
+    "tagline": "Data · Business Intelligence · Industrialisation",
     "rights": "All rights reserved.",
     "built": "Designed and built by Norayr Tanielian."
   },
