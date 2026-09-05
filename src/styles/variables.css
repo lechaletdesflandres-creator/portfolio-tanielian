@@ -23,6 +23,8 @@
   --h-green: #2f7a58;
   --h-amber: #8f6415;
   --h-rose: #a34a5e;
+  --h-slate: #45607a;
+  --h-plum: #854a72;
 
   --h-blue-soft: #eaf1f8;
   --h-teal-soft: #e4f2f3;
@@ -30,6 +32,8 @@
   --h-green-soft: #e6f2ec;
   --h-amber-soft: #f7f0e2;
   --h-rose-soft: #f9ecef;
+  --h-slate-soft: #edf0f4;
+  --h-plum-soft: #f6ecf2;
 
   /* Teinte par défaut d'un bloc coloré : chaque carte redéfinit --g. */
   --g: var(--color-accent);

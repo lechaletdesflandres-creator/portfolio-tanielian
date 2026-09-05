@@ -45,8 +45,8 @@
       },
       "formation": {
         "period": "2023",
-        "role": "Diplôme d'ingénieur",
-        "place": "ECAM-EPMI, Mécatronique & Productique",
+        "role": "Diplôme d’ingénieur généraliste",
+        "place": "ECAM-EPMI (bac+5)",
         "desc": "Cycle ingénieur après classes préparatoires aux grandes écoles (PSI). TOEIC 935/990."
       }
     }
@@ -139,12 +139,14 @@
     "eyebrow": "Compétences",
     "title": "Une boîte à outils data, du script au tableau de bord gouverné",
     "groups": {
-      "data": "Langages & data",
-      "bi": "BI & dataviz",
-      "automation": "Automatisation",
-      "web": "Web & cloud",
-      "method": "Méthode",
-      "domain": "Domaine"
+      "db": "Bases de données",
+      "dev": "Développement & scripting",
+      "indus": "Traitement & industrialisation",
+      "dataviz": "Restitution & dataviz",
+      "env": "Environnements & systèmes",
+      "method": "Méthodes de travail",
+      "domain": "Domaine métier",
+      "langues": "Langues"
     }
   },
   "contact": {

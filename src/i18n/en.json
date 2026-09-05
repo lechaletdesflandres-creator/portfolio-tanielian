@@ -45,8 +45,8 @@
       },
       "formation": {
         "period": "2023",
-        "role": "Engineering degree (MEng)",
-        "place": "ECAM-EPMI, Mechatronics & Industrial Production",
+        "role": "General engineering degree (MEng)",
+        "place": "ECAM-EPMI (5-year degree)",
         "desc": "Engineering cycle after CPGE, France's selective two-year science track (PSI). TOEIC 935/990."
       }
     }
@@ -139,12 +139,14 @@
     "eyebrow": "Skills",
     "title": "A data toolbox, from scripts to governed dashboards",
     "groups": {
-      "data": "Languages & data",
-      "bi": "BI & data viz",
-      "automation": "Automation",
-      "web": "Web & cloud",
-      "method": "Method",
-      "domain": "Domain"
+      "db": "Databases",
+      "dev": "Development & scripting",
+      "indus": "Processing & industrialisation",
+      "dataviz": "Reporting & data viz",
+      "env": "Environments & systems",
+      "method": "Ways of working",
+      "domain": "Domain knowledge",
+      "langues": "Languages"
     }
   },
   "contact": {

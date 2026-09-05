@@ -5,20 +5,25 @@
      industrielle » se repliait sur trois lignes. */
   grid-template-columns: repeat(2, 1fr);
   gap: clamp(18px, 2.5vw, 24px);
+  /* Les cartes gardent leur hauteur naturelle. Etirees a la hauteur de rangee,
+     les groupes courts (Bases de donnees, Domaine) affichaient une grande
+     surface blanche vide a cote d'un groupe a sept entrees. */
+  align-items: start;
 }
 
 /* Une teinte par domaine : la couleur identifie le bloc au lieu de le decorer. */
-.skills__card[data-group='data'] { --g: var(--h-blue); --g-soft: var(--h-blue-soft); }
-.skills__card[data-group='bi'] { --g: var(--h-teal); --g-soft: var(--h-teal-soft); }
-.skills__card[data-group='automation'] { --g: var(--h-violet); --g-soft: var(--h-violet-soft); }
-.skills__card[data-group='web'] { --g: var(--h-green); --g-soft: var(--h-green-soft); }
-.skills__card[data-group='method'] { --g: var(--h-amber); --g-soft: var(--h-amber-soft); }
-.skills__card[data-group='domain'] { --g: var(--h-rose); --g-soft: var(--h-rose-soft); }
+.skills__card[data-group='db'] { --g: var(--h-blue); --g-soft: var(--h-blue-soft); }
+.skills__card[data-group='dev'] { --g: var(--h-teal); --g-soft: var(--h-teal-soft); }
+.skills__card[data-group='indus'] { --g: var(--h-violet); --g-soft: var(--h-violet-soft); }
+.skills__card[data-group='dataviz'] { --g: var(--h-green); --g-soft: var(--h-green-soft); }
+.skills__card[data-group='env'] { --g: var(--h-amber); --g-soft: var(--h-amber-soft); }
+.skills__card[data-group='method'] { --g: var(--h-rose); --g-soft: var(--h-rose-soft); }
+.skills__card[data-group='domain'] { --g: var(--h-slate); --g-soft: var(--h-slate-soft); }
+.skills__card[data-group='langues'] { --g: var(--h-plum); --g-soft: var(--h-plum-soft); }
 
 .skills__card {
   position: relative;
   overflow: hidden;
-  height: 100%;
   padding: clamp(20px, 2.5vw, 26px);
   background: var(--color-surface);
   border: 1px solid var(--color-border);
