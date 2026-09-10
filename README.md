@@ -1,6 +1,6 @@
 # Portfolio de Norayr Tanielian
 
-Site portfolio bilingue FR/EN, orienté Data / Business Intelligence / KPI.
+Site portfolio bilingue FR/EN, orienté Data / Business Intelligence / Industrialisation.
 Conçu, développé et déployé de bout en bout.
 
 **→ [portfolio.tanielian.fr](https://portfolio.tanielian.fr)**
@@ -29,7 +29,7 @@ Le code est donc lisible de bout en bout, et c'est volontaire.
 | **Hébergement** | AWS Amplify Hosting + CloudFront + Route 53 + ACM |
 
 Aucun framework CSS, aucune bibliothèque d'animation, aucun runtime i18n. Le bundle
-de production pèse **55 ko de JavaScript et 4,7 ko de CSS** une fois compressé.
+de production pèse **59 ko de JavaScript et 4,8 ko de CSS** une fois compressé.
 
 ## Architecture
 
@@ -46,7 +46,7 @@ src/
 dur : ils lisent des clés (`t('about.p1')`) et les structures dans `src/data/`. Ajouter
 un projet, c'est éditer deux fichiers de données, jamais un composant.
 
-**i18n symétrique.** `fr.json` et `en.json` exposent exactement les mêmes 79 clés. La
+**i18n symétrique.** `fr.json` et `en.json` exposent exactement les mêmes 101 clés. La
 langue est détectée depuis `navigator.language`, puis persistée en `localStorage`. Une
 clé manquante retourne son propre nom plutôt qu'une chaîne vide, ce qui rend les oublis
 visibles en développement.
@@ -54,22 +54,24 @@ visibles en développement.
 ## Système de design
 
 Tout part de [`src/styles/variables.css`](src/styles/variables.css). Le point central
-est une **famille de six teintes**, calées sur la même clarté et la même saturation
-pour se lire comme un système plutôt que comme six couleurs indépendantes :
+est une **famille de huit teintes**, calées sur la même clarté et la même saturation
+pour se lire comme un système plutôt que comme huit couleurs indépendantes :
 
-| Teinte | Domaine |
+| Teinte | Groupe de compétences |
 |---|---|
-| Bleu | Données, langages |
-| Pétrole | BI & dataviz |
-| Violet | Automatisation |
-| Vert | Web & cloud |
-| Ambre | Méthode |
-| Rose sourd | Domaine métier |
+| Bleu | Bases de données |
+| Pétrole | Développement & scripting |
+| Violet | Traitement & industrialisation |
+| Vert | Restitution & dataviz |
+| Ambre | Environnements & systèmes |
+| Rose sourd | Méthodes de travail |
+| Ardoise | Domaine métier |
+| Prune | Langues |
 
 Chaque carte déclare sa teinte via un attribut de données (`data-group`,
-`data-project`, `data-entry`), et le CSS la propage par une variable locale `--g`. Une
-compétence BI et le projet BI partagent donc automatiquement la même couleur : la
-couleur porte du sens, elle ne décore pas.
+`data-project`, `data-entry`), et le CSS la propage par une variable locale `--g`. Chaque
+groupe de compétences et chaque projet ont ainsi leur propre teinte : la couleur
+identifie le bloc, elle ne décore pas.
 
 Changer une teinte se fait à un seul endroit et se propage à l'ensemble du site.
 
@@ -80,7 +82,7 @@ Changer une teinte se fait à un seul endroit et se propage à l'ensemble du sit
 - Lien d'évitement, structure de titres cohérente, `:focus-visible` explicite
 - `prefers-reduced-motion` respecté : animations d'apparition et pulsation désactivées
 - Cibles tactiles à 44 px minimum sur mobile
-- Photo servie en 4 largeurs via `srcSet` / `sizes` : 7 ko sur mobile au lieu de 51
+- Photo servie en 4 largeurs via `srcSet` / `sizes` : 7 à 13 ko sur mobile selon la densité d’écran, au lieu de 51
 - Aucun débordement horizontal, vérifié par mesure DOM à 412, 900 et 1440 px
 
 ## Déploiement
