@@ -18,7 +18,7 @@
   "about": {
     "eyebrow": "À propos",
     "title": "Ingénieur de formation, praticien de la data par la pratique",
-    "p1": "Chargé Méthodes Maintenance au Groupe ADP, à Paris-Orly (équipe ORYEG, process équipements passagers). Je travaille aux Méthodes centrales, en appui de l’agence aérogare, de l’agence S2A et de l’agence utilités, ainsi que sur les sujets transverses aux trois. Un quotidien en réalité fortement orienté data : collecte et mise à disposition des données d’exploitation, industrialisation des traitements en Python, et mise en production de leur restitution dans Power BI, dans le respect de la politique technique Data.",
+    "p1": "Chargé Méthodes Maintenance au Groupe ADP, à Paris-Orly (équipe ORYEG, ingénierie de maintenance). Je travaille aux Méthodes centrales, en appui de l’agence aérogare, de l’agence S2A et de l’agence utilités, ainsi que sur les sujets transverses aux trois. Un quotidien en réalité fortement orienté data : collecte et mise à disposition des données d’exploitation, industrialisation des traitements en Python, et mise en production de leur restitution dans Power BI, dans le respect de la politique technique Data.",
     "p2": "J'ai construit mes compétences data par des projets concrets plutôt que par une formation théorique : pipelines de données, plateformes BI gouvernées, automatisations à forte valeur métier. En parallèle, je gère et développe l'application web d'un restaurant familial, du front React jusqu'au cloud AWS.",
     "p3": "Mon objectif : un poste de data engineer, où je continue à prendre les traitements de la collecte jusqu’à la mise en production, sans perdre ce qui fait ma force, la capacité à relier la technique aux besoins métier réels.",
     "photoAlt": "Photo de Norayr Tanielian (à venir)",
@@ -63,9 +63,9 @@
     "items": {
       "powerbi": {
         "name": "Plateforme décisionnelle gouvernée",
-        "context": "Pilotage de la performance et de la disponibilité des équipements passagers à Paris-Orly depuis les Méthodes centrales, en appui de plusieurs agences : 310 équipements électromécaniques, 67 passerelles télescopiques, 134 mires de guidage et les convertisseurs 400 Hz. Plateforme Power BI multi-activités, et production des données de qualité de service transmises à la DSI.",
-        "done": "Conception de tableaux de bord de disponibilité et de mesures DAX avancées (Top N dynamique, durées pondérées par plage horaire), drill-through et documentation de transfert. Automatisation d’un flux Power BI qui récupère les données de la GMAO SAP et de SEQUOIA, l’interface de déclaration des interventions, les met en forme et les dépose dans la GED de la DSI, où elles alimentent le moteur QDS (Qualité de Service). Au-delà de la conception : administration des espaces « Made by ORYE » et « Made by ORYE VAL », gouvernance validation puis production, droits de publication et d’automatisation des rapports, et gestion de plusieurs audiences avec cloisonnement strict des données confidentielles entre activités.",
-        "value": "Depuis 2025, l’équipe est autonome sur l’automatisation de ses indicateurs : là où chaque nouvelle automatisation passait par une demande à la DSI, j’administre désormais les espaces et je la mets en œuvre directement. Côté métier, les calculs Excel manuels ont été remplacés par des mesures automatisées et fiables, suivies par les équipes opérationnelles dans un cadre de diffusion maîtrisé.",
+        "context": "Pilotage de la performance et de la disponibilité des équipements passagers à Paris-Orly depuis les Méthodes centrales, en appui de plusieurs agences : 310 équipements électromécaniques, 67 passerelles télescopiques, 134 mires de guidage et les convertisseurs 400 Hz. Plateforme Power BI multi-activités, et production des données de qualité de service transmises à NxT.",
+        "done": "Conception de tableaux de bord de disponibilité et de mesures DAX avancées (Top N dynamique, durées pondérées par plage horaire), drill-through et documentation de transfert. Automatisation d’un flux Power BI qui récupère les données de la GMAO SAP et de SEQUOIA, l’interface de déclaration des interventions, les met en forme et les dépose dans la GED de NxT, où elles alimentent le moteur QDS (Qualité de Service). Au-delà de la conception : administration des espaces « Made by ORYE » et « Made by ORYE VAL », gouvernance validation puis production, droits de publication et d’automatisation des rapports, et gestion de plusieurs audiences avec cloisonnement strict des données confidentielles entre activités.",
+        "value": "Depuis 2025, l’équipe est autonome sur l’automatisation de ses indicateurs : là où chaque nouvelle automatisation passait par une demande à NxT, j’administre désormais les espaces et je la mets en œuvre directement. Côté métier, les calculs Excel manuels ont été remplacés par des mesures automatisées et fiables, suivies par les équipes opérationnelles dans un cadre de diffusion maîtrisé.",
         "metrics": [
           {
             "value": "500+",
@@ -77,14 +77,14 @@
           },
           {
             "value": "2025",
-            "label": "délégation d’administration par la DSI"
+            "label": "délégation d’administration par NxT"
           }
         ]
       },
       "pipeline": {
         "name": "Réconciliation de données multi-sources",
         "context": "Relier la maintenance et l’exploitation autour des postes avions de Paris-Orly. Les deux directions raisonnaient sur des données séparées : personne ne pouvait dire, pour un créneau donné, ce qui s’était réellement passé sur un poste ni pourquoi.",
-        "done": "Intégration de cinq sources hétérogènes relevant de quatre entités distinctes : le programme des vols fourni par INGEX côté exploitation, la supervision des postes déployée par l’agence S2A (systèmes aéroportuaires automatisés), les interventions déclarées dans SEQUOIA, les relevés de compteurs PCA, et les comptes rendus de trois prestataires reçus en fichiers Excel. Chacune avec son format, sa granularité et son référentiel propres. Pipeline de 4 scripts Python chaînés (orchestration par script batch et logs horodatés) : normalisation, nettoyage et extraction par expressions régulières, résolution de relations many-to-many via tables de référence, puis matching temporel par créneaux de 10 minutes avec classification en 6 états. Arbitrage des écarts entre sources automatiques et déclaratif humain. Sortie en CSV et matrice PDF grand format pour affichage opérationnel. Une exécution complète couvre les 57 postes avions en 2 minutes, en croisant plusieurs milliers de valeurs.",
+        "done": "Intégration de cinq sources hétérogènes relevant de quatre entités distinctes : le programme des vols fourni par INGEX côté exploitation, la supervision des postes déployée par l’agence S2A (systèmes aéroportuaires automatisés), les interventions déclarées dans SEQUOIA, les relevés de compteurs PCA, et les comptes rendus de trois prestataires reçus en fichiers Excel. Chacune avec son format, sa granularité et son référentiel propres. Pipeline de 6 scripts Python chaînés (orchestration par script batch et logs horodatés) : normalisation, nettoyage et extraction par expressions régulières, résolution de relations many-to-many via tables de référence, puis matching temporel par créneaux de 10 minutes avec classification en 6 états. Arbitrage des écarts entre sources automatiques et déclaratif humain. Sortie en CSV et matrice PDF grand format pour affichage opérationnel. Une exécution complète couvre les 57 postes avions en 2 minutes, en croisant plusieurs milliers de valeurs.",
         "value": "Une lecture unique et traçable de ce qui s'est réellement passé sur chaque poste, là où maintenance et exploitation travaillaient sur des données disjointes. Qualification automatique et reproductible, intégrée en aval dans Power BI (mode Import + drill-through).",
         "metrics": [
           {
@@ -105,21 +105,17 @@
         "name": "Pilotage produit par la donnée",
         "metrics": [
           {
-            "value": "143",
+            "value": "300+",
             "label": "tâches suivies"
           },
           {
             "value": "4",
             "label": "sprints menés"
-          },
-          {
-            "value": "41 %",
-            "label": "de report détecté"
           }
         ],
         "context": "DonPa, party game mobile développé par une équipe de trois, dont aucun membre n'y travaille à plein temps. Dix modes de jeu à concevoir, près de 4 000 cartes de contenu à écrire et relire, aucun processus. Le risque n'était pas technique : c'était de perdre le fil de qui fait quoi, de rouvrir trois fois les mêmes débats et de ne jamais livrer. Mon rôle : chef de projet et product owner.",
         "done": "Mise en place d'un référentiel de suivi unique, assez léger pour que personne ne le contourne et assez structuré pour être mesurable. Schéma de propriétés conçu pour filtrer chaque tâche selon quatre axes indépendants (statut, sprint, priorité, chantier, mode de jeu), et six vues filtrées sur cette source unique plutôt que plusieurs bases. Deux choix structurants : le sprint en multi-select, pour qu'une tâche reportée conserve son sprint d'origine et que le report devienne une donnée au lieu de disparaître ; et des statuts « à trancher » et « standby », parce qu'à trois la perte de temps vient de l'indécision, pas de l'exécution. Rythme de sprint calé sur une équipe non dédiée : périmètre figé au lancement, arrivées en cours de route versées au backlog par défaut, définition de fini explicite où la personne qui code n'est pas celle qui valide, relecture croisée du contenu par les trois membres avant mise en production. Enfin, le board branché en MCP et interrogé en SQL pour produire des points d'avancement chiffrés, restitués en rapports PDF.",
-        "value": "La mesure a révélé que 41 % des tâches avaient été reportées au moins une fois, un chiffre invisible sans la structure multi-select. Diagnostic : le périmètre des deux premiers sprints était calibré sur une disponibilité théorique, pas sur la capacité réelle d'une équipe qui travaille le soir. Correctifs appliqués dès le sprint suivant : périmètre resserré sur les priorités hautes, reste-à-faire lisible d'un coup d'œil, et séparation du travail de contenu, parallélisable, et du développement, séquentiel. Le Kanban cesse d'être un tableau de post-its pour devenir une source de données sur laquelle on pilote."
+        "value": "Au quatrième sprint, la mesure a révélé que 41 % des tâches suivies jusque-là avaient été reportées au moins une fois, un chiffre invisible sans la structure multi-select. Diagnostic : le périmètre des deux premiers sprints était calibré sur une disponibilité théorique, pas sur la capacité réelle d'une équipe qui travaille le soir. Correctifs appliqués dès le sprint suivant : périmètre resserré sur les priorités hautes, reste-à-faire lisible d'un coup d'œil, et séparation du travail de contenu, parallélisable, et du développement, séquentiel. Le Kanban cesse d'être un tableau de post-its pour devenir une source de données sur laquelle on pilote."
       },
       "resto": {
         "name": "Application web de gestion pour un restaurant",
